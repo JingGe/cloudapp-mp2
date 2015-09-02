@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories{
+mavenCentral()
+    maven {
+        //url 'http://repo.hortonworks.com/content/repositories/releases/'
+        url 'http://repo.hortonworks.com/content/groups/public/'
+    }
+}
+
+dependencies {
+compile 'org.apache.hadoop:hadoop-common:2.7.1.2.3.2.0-2650'
+compile 'org.apache.hadoop:hadoop-client:2.7.1.2.3.2.0-2650'
+
+sourceSets {
+    main {
+        java {
+            srcDir '.'
+        }
+    }
+}
+
+testCompile  "junit:junit:4.0+"
+}
+
+
